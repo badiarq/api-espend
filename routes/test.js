@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const sessions = require('../services/sessions');
+const testTable = require('../services/test');
 
-// GET Sessions
+// GET test records
 router.get('/', async function (req, res, next) {
     try {
-        res.json(await sessions.getMultiple(req.query.page));
+        res.json(await testTable.getMultiple(req.query.page));
     } catch (err) {
-        console.error(`Error while getting sessions `, err.message);
+        console.error(`Error while getting test records `, err.message);
         next(err);
     }
 });
+
 module.exports = router;
