@@ -5,7 +5,7 @@ const helmet = require("helmet");
 const cors = require('cors');
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(helmet());
@@ -19,8 +19,7 @@ app.use(
 app.get("/", (req, res) => { res.json({ message: "Not authorized" }); });
 
 // Routes
-app.use("/attendees", require("./routes/attendees"));
-app.use("/sessions", require("./routes/sessions"));
+app.use("/test", require("./routes/test"));
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
