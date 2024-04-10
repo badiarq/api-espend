@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const participantsTable = require('../services/sub_categories');
+const sub_categoriesTable = require('../services/sub_categories');
 
 // GET sub_categories records
 router.get('/', async function (req, res, next) {
