@@ -22,6 +22,7 @@ app.get("/", (req, res) => { res.json({ message: "Not authorized" }); });
 app.use("/participants", require("./routes/participants"));
 app.use("/categories", require("./routes/categories"));
 app.use("/sub_categories", require("./routes/sub_categories"));
+app.use("/revenus", require("./routes/revenus"));
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
