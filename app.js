@@ -24,6 +24,7 @@ app.use("/users", require("./routes/users"));
 app.use("/participants", require("./routes/participants"));
 app.use("/categories", require("./routes/categories"));
 app.use("/sub_categories", require("./routes/sub_categories"));
+app.use("/spends", require("./routes/spends"));
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
