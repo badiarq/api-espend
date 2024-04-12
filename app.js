@@ -20,6 +20,7 @@ app.get("/", (req, res) => { res.json({ message: "Not authorized" }); });
 
 // Routes
 app.use("/content", require("./routes/content"));
+app.use("/users", require("./routes/users"));
 app.use("/participants", require("./routes/participants"));
 app.use("/categories", require("./routes/categories"));
 app.use("/sub_categories", require("./routes/sub_categories"));
