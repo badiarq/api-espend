@@ -12,6 +12,17 @@ async function getMultiple() {
     return result
 }
 
+// Get Category by Reference 
+async function getOneCategory(reference) { 
+    const query = `SELECT * FROM ${database} WHERE reference = ?` 
+    const params = [reference]; 
+    let result = await db.query(query, params); 
+    const data = result[0] 
+
+    return data;
+} 
+
 module.exports = {
-    getMultiple
+    getMultiple,
+    getOneCategory
 }

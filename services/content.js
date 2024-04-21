@@ -12,6 +12,17 @@ async function getMultiple() {
     return result
 }
 
+// Get Content by code
+async function gContent(code) { 
+    const query = `SELECT * FROM ${database} WHERE code = ?` 
+    const params = [code]; 
+    let result = await db.query(query, params); 
+    const data = result[0] 
+
+    return data
+} 
+
 module.exports = {
-    getMultiple
+    getMultiple,
+    gContent
 }
